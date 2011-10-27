@@ -12,7 +12,14 @@
 #include <windns.h>
 #elif defined __use_posix__
 #include <arpa/nameser.h>
+#ifdef __use_openbsd__
+#define ns_c_in C_IN
+#define ns_t_srv T_SRV
+#define NS_HFIXEDSZ HFIXEDSZ
+#define NS_QFIXEDSZ QFIXEDSZ
+#else
 #include <arpa/nameser_compat.h>
+#endif
 #include <resolv.h>
 #endif
 
