@@ -33,6 +33,12 @@ else
     LT = libtool $(SILENTLIB) --tag=CC
 endif
 
+# OpenBSD specifics
+ifeq ($(shell uname -s),OpenBSD)
+    CFLAGS += -I/usr/local/include
+    LDFLAGS += -L/usr/local/lib -lvorbisfile -logg -lvorbis -lcrypto -lm -lpthread
+endif
+
 # windows specifics
 ifeq ($(firstword $(subst _, ,$(shell uname -s))), MINGW32)
     LDFLAGS += -leay32
