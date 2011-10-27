@@ -14,10 +14,11 @@
 #include "util.h"
 #include "sha1.h"
 
-
+#ifndef __use_openbsd__
 #if !defined srandom || !defined random
 #define srandom srand
 #define random rand
+#endif
 #endif
 
 void puzzle_solve (SESSION * session)
