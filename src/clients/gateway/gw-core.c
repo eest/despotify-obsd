@@ -176,7 +176,7 @@ int main (int argc, char **argv)
 				}
 			}
 
-			printf ("Dropping a dead (%ld seconds old, max allowed=%u) or failed Spotify connection (id %s)\n", t - client[i]->last_activity, SPOTIFYSESSION_TIMEOUT, client[i]->client_id);
+			printf ("Dropping a dead (%d seconds old, max allowed=%u) or failed Spotify connection (id %s)\n", t - client[i]->last_activity, SPOTIFYSESSION_TIMEOUT, client[i]->client_id);
 
 			for (j = 0; j < num_rest; j++) {
 				if (rest[j]->client != client[i])
