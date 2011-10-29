@@ -27,6 +27,11 @@ ifeq ($(shell uname -s),Linux)
     LDFLAGS += -lresolv -lpthread
 endif
 
+# OpenBSD specifics
+ifeq ($(shell uname -s),OpenBSD)
+    LDCONFIG = true
+endif
+
 libdespotify.la: $(LIB_OBJS)
 	@echo LD $@
 	$(SILENT)$(LT) --mode=link $(CC) -o libdespotify.la $(LDFLAGS) $(LIB_OBJS)
