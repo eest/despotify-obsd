@@ -14,7 +14,7 @@ CLIENT_GATEWAY   = 1
 # MAEMO4 = 1
 
 ## Install prefix
-# INSTALL_PREFIX = /usr
+INSTALL_PREFIX = /usr/local
 
 ## Specify ncurses include path explicitly. (should contain curses.h)
 # NCURSES_INCLUDE = /usr/local/include/ncursesw

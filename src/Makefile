@@ -6,7 +6,7 @@
 export
 
 CFLAGS = -Wall -Wextra -ggdb -std=gnu99
-LDFLAGS = -lz -lvorbisfile
+LDFLAGS = -lz -lvorbisfile -lmpg123
 
 LD = $(CC)
 
@@ -36,7 +36,8 @@ endif
 # OpenBSD specifics
 ifeq ($(shell uname -s),OpenBSD)
     CFLAGS += -I/usr/local/include
-    LDFLAGS += -L/usr/local/lib -lvorbisfile -logg -lvorbis -lcrypto -lm -lpthread
+    LDFLAGS += -L/usr/local/lib -lmpg123 -lvorbisfile -logg -lvorbis -lcrypto -lm -lpthread
+    INSTALL_PREFIX ?= ${DESTDIR}/usr/local
 endif
 
 # windows specifics

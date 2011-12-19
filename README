@@ -19,12 +19,13 @@ Packages:
     libogg
     libtool
     libvorbis
+    mpg123
 
 
 Source code
 ~~~~~~~~~~~
-The latest version of the source code can be checked out from our Subversion repository
-  $ svn checkout https://despotify.svn.sourceforge.net/svnroot/despotify despotify
+The latest version of the source code can be checked out from our Git repository:
+  $ git clone https://github.com/eest/despotify-obsd.git 
 
 
 Directories
@@ -42,7 +43,7 @@ If you encounter any problems, ask a friend or ask in the channel
 Build instructions for the simple client and library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Install necessary packages (as root)
-   # pkg_add gmake libao libogg libtool libvorbis
+   # pkg_add gmake libao libogg libtool libvorbis mpg123
 
 2. Go to the directory src/ where the despotify library and client is located
    $ cd src
