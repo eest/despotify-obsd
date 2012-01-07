@@ -22,18 +22,18 @@ Source code
 $ git clone https://github.com/eest/despotify-obsd.git
 
 Build instructions for the clients and library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Install necessary packages (as root)
    # pkg_add gmake libao libogg libtool libvorbis mpg123
 
 2. Go to the directory src/ where the despotify library and client is located
    $ cd src
 
-2. Run gmake
+3. Run gmake
    $ gmake
 
-3. Install (as root)
+4. Install (as root)
    # gmake install
 
-4. You'll now have a 'despotify' and 'despotify-simple' client as well as a
+5. You'll now have a 'despotify' and 'despotify-simple' client as well as a
 gateway called 'despotify-gateway' installed under /usr/local/bin.
