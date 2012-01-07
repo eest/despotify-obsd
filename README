@@ -1,13 +1,9 @@
-Despotify - the open source Spotify client
-http://despotify.se/
-
-
 despotify-obsd?
 ~~~~~~~~~~~~~~~
-This is the despotify client tweaked in order to build and run on
-OpenBSD. None of the currently involved people have any connections
-to the original developers.
-
+This is the despotify client (http://despotify.se) tweaked in order to build
+and run on OpenBSD. None of the currently involved people have any connections
+to the original despotify developers (thanks a lot for your time and effort
+creating despotify!).
 
 Requirements?
 ~~~~~~~~~~~~~
@@ -21,26 +17,11 @@ Packages:
     libvorbis
     mpg123
 
-
 Source code
 ~~~~~~~~~~~
-The latest version of the source code can be checked out from our Git repository:
-  $ git clone https://github.com/eest/despotify-obsd.git 
+$ git clone https://github.com/eest/despotify-obsd.git
 
-
-Directories
-~~~~~~~~~~~
-The checked out source code contains a number of directories
-  java/		This is where one of the available Java implementations go
-  src/		This is where the C based client, library and Python bindings go
-  web/		This is where the source code for our web site goes (http://despotify.se)
-
-
-If you encounter any problems, ask a friend or ask in the channel
-#despotify on EFNet (example EFNet servers: irc.swepipe.se, efnet.xs4all.nl)
-
-
-Build instructions for the simple client and library
+Build instructions for the clients and library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Install necessary packages (as root)
    # pkg_add gmake libao libogg libtool libvorbis mpg123
@@ -54,22 +35,5 @@ Build instructions for the simple client and library
 3. Install (as root)
    # gmake install
 
-4. You'll now have a client called 'despotify-simple' and a gateway called 'gateway'
-   installed under ${INSTALL_PREFIX}/bin (usually this will be /usr/bin)
-
-
-Also checkout
-~~~~~~~~~~~~~
-http://jotify.felixbruns.de/
-- Felix Bruns' Java implementation of a Spotify compatible library and GUI client
-
-http://github.com/nevyn/spot
-- Nevyn's Spotify compatible client for the iPhone/iPod platform
-
-http://www.spotify.com/
-- Home of Spotify 
-
-
-Final notes
-~~~~~~~~~~~
-This project is neither endorsed by nor associated with Spotify :-)
+4. You'll now have a 'despotify' and 'despotify-simple' client as well as a
+gateway called 'despotify-gateway' installed under /usr/local/bin.
