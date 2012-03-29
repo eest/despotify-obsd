@@ -16,8 +16,6 @@ PERMIT_DISTFILES_FTP=	Yes
 
 MASTER_SITES=	http://qbit.devio.us/
 
-WANTLIB +=	c m pthread stdc++ util
-
 BUILD_DEPENDS=	devel/gmake \
 				audio/mpg123 \
 				audio/libao \
