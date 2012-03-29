@@ -14,6 +14,10 @@
 #define __use_posix__
 #endif
 
+#ifdef __OpenBSD__
+#define __use_openbsd__
+#endif
+
 // include stuff
 #ifdef __use_winsock__
  #include <stdio.h>
