@@ -1,6 +1,15 @@
 $OpenBSD$
---- lib/local.mk.orig	Thu Mar 29 08:38:43 2012
-+++ lib/local.mk	Thu Mar 29 08:38:53 2012
+--- lib/local.mk.orig	Thu Mar 29 09:06:27 2012
++++ lib/local.mk	Thu Mar 29 09:06:51 2012
+@@ -4,7 +4,7 @@
+ 
+ LIB_OBJS = aes.lo auth.lo buf.lo cache.lo channel.lo commands.lo dns.lo ezxml.lo handlers.lo keyexchange.lo packet.lo puzzle.lo session.lo shn.lo sndqueue.lo util.lo network.lo despotify.lo sha1.lo hmac.lo xml.lo 
+ 
+-LDFLAGS += -rpath /usr/lib
++LDFLAGS += -rpath ${TRUEPREFIX}/lib
+ LDCONFIG = ldconfig
+ 
+ .PHONY: all clean install uninstall
 @@ -52,7 +52,7 @@ install: libdespotify.la
  	install -d $(INSTALL_PREFIX)/lib/pkgconfig
  	 
