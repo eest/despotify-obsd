@@ -1,0 +1,12 @@
+$OpenBSD$
+--- lib/local.mk.orig	Thu Mar 29 08:38:43 2012
++++ lib/local.mk	Thu Mar 29 08:38:53 2012
+@@ -52,7 +52,7 @@ install: libdespotify.la
+ 	install -d $(INSTALL_PREFIX)/lib/pkgconfig
+ 	 
+ 	$(LT) --mode=install install libdespotify.la $(INSTALL_PREFIX)/lib/libdespotify.la
+-	$(LDCONFIG) -n $(INSTALL_PREFIX)/lib
++	$(LDCONFIG) $(INSTALL_PREFIX)/lib
+ 	install -d $(INSTALL_PREFIX)/include/ 
+ 	install despotify.h $(INSTALL_PREFIX)/include/
+ 	install -d $(INSTALL_PREFIX)/lib/pkgconfig/

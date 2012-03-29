@@ -1,0 +1,26 @@
+$OpenBSD$
+--- Makefile.orig	Thu Mar 29 08:31:48 2012
++++ Makefile	Thu Mar 29 08:31:58 2012
+@@ -6,7 +6,7 @@
+ export
+ 
+ CFLAGS = -Wall -Wextra -ggdb -std=gnu99
+-LDFLAGS = -lz -lvorbisfile
++LDFLAGS = -lz -lvorbisfile -lmpg123
+ 
+ LD = $(CC)
+ 
+@@ -36,6 +36,13 @@ ifeq ($(shell uname -s),Darwin)
+     LT = glibtool --tag=CC
+ else
+     LT = libtool $(SILENTLIB) --tag=CC
++endif
++
++# OpenBSD specifics
++ifeq ($(shell uname -s),OpenBSD)
++    CFLAGS += -I/usr/local/include
++    LDFLAGS += -L/usr/local/lib -lmpg123 -lvorbisfile -logg -lvorbis -lcrypto -lm -lpthread
++    INSTALL_PREFIX ?= ${DESTDIR}/usr/local
+ endif
+ 
+ # windows specifics

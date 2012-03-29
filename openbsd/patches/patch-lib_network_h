@@ -1,0 +1,14 @@
+$OpenBSD$
+--- lib/network.h.orig	Thu Mar 29 08:33:30 2012
++++ lib/network.h	Thu Mar 29 08:33:38 2012
+@@ -14,6 +14,10 @@
+ #define __use_posix__
+ #endif
+ 
++#ifdef __OpenBSD__
++#define __use_openbsd__
++#endif
++
+ // include stuff
+ #ifdef __use_winsock__
+  #include <stdio.h>

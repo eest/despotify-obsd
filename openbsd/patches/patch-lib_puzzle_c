@@ -1,0 +1,16 @@
+$OpenBSD$
+--- lib/puzzle.c.orig	Thu Mar 29 08:34:23 2012
++++ lib/puzzle.c	Thu Mar 29 08:34:30 2012
+@@ -14,10 +14,11 @@
+ #include "util.h"
+ #include "sha1.h"
+ 
+-
++#ifndef __use_openbsd__
+ #if !defined srandom || !defined random
+ #define srandom srand
+ #define random rand
++#endif
+ #endif
+ 
+ void puzzle_solve (SESSION * session)
