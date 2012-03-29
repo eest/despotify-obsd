@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: keyexchange.h 461 2009-11-11 13:40:15Z zagor $
  *
  */
 

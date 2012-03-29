@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: xml.c 520 2012-03-17 10:04:59Z dalus $
  *
  * Playlist related stuff
  *
@@ -252,16 +252,41 @@ static int parse_tracks(ezxml_t xml, struct track* t, bool ordered, bool high_bi
         for ( ezxml_t file = ezxml_get(track, "files",0, "file",-1); file; file = file->next) {
             char* fmt = (char*)ezxml_attr(file, "format");
             if (fmt) {
-                unsigned int bitrate;
+                unsigned int bitrate = 0;
+                bool found_rate = false;
+#ifndef MP3_SUPPORT
+                if ( strncmp("Ogg",fmt,3) != 0 ) {
+                    /* Ignore */
+                    continue;
+                }
+#endif
                 if (sscanf(fmt,"Ogg Vorbis,%u,", &bitrate)) {
-                    if (bitrate > t->file_bitrate) {
-                        if (high_bitrate || t->file_bitrate == 0)
+                    found_rate = true;
+                } else if (sscanf(fmt,"MPEG 1 layer 3,%u,", &bitrate)) {
+                    found_rate = true;
+                }
+
+
+                if ( found_rate ) {
+                    if ( high_bitrate ) {
+                        /* Find the highest possible bitrate */
+                        if ( bitrate > t->file_bitrate || t->file_bitrate == 0 ) {
                             t->file_bitrate = bitrate;
-                        else
+                        } else {
                             continue;
+                        }
+                    } else {
+                        /* Find the lowest possible bitrate
+                         * TODO: Is this correct behaviour ? 
+                         */
+                        if ( (bitrate < t->file_bitrate || t->file_bitrate == 0)  && bitrate != 0 ) {
+                            t->file_bitrate = bitrate;
+                        } else {
+                            continue;
+                        }
                     }
                 }
-                        
+
                 char* id = (char*)ezxml_attr(file, "id");
                 if (id) {
                     DSFYstrncpy(t->file_id, id, sizeof t->file_id);

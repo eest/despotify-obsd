@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: auth.c 399 2009-07-29 11:50:46Z noah-w $
  *
  * Code for dealing with authentication against
  * the server.

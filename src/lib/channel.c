@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: channel.c 462 2009-11-11 14:26:23Z zagor $
  *
  * Register and callbak interface for handling 
  * data channels inside a single connection to

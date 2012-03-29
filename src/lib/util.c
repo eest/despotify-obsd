@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: util.c 399 2009-07-29 11:50:46Z noah-w $
  *
  * Various support routines
  *

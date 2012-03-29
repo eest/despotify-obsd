@@ -1,5 +1,5 @@
 #
-# $Id$
+# $Id: Makefile 519 2012-03-17 09:25:26Z dalus $
 # 
 #
 
@@ -24,6 +24,11 @@ include Makefile.local.mk
 
 ifeq ($(DEBUG), 1)
     CFLAGS += -DDEBUG
+endif
+
+ifeq ($(MP3_SUPPORT), 1)
+    CFLAGS += -DMP3_SUPPORT
+    LDFLAGS += -lmpg123
 endif
 
 # Mac OS X specifics

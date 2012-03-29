@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: packet.c 398 2009-07-28 23:16:37Z noah-w $
  *
  * Deal with reading and writing packets
  * and packet processing

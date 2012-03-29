@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: network.h 399 2009-07-29 11:50:46Z noah-w $
  *
  * Cross platform networking for despotify
  *
@@ -12,10 +12,6 @@
 #define __use_winsock__
 #else
 #define __use_posix__
-#endif
-
-#ifdef __OpenBSD__
-#define __use_openbsd__
 #endif
 
 // include stuff

@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: handlers.c 494 2010-01-27 22:17:56Z cbkm $
  *
  * Default handlers for different types of commands
  *

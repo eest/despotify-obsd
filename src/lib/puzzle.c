@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: puzzle.c 291 2009-04-08 14:22:33Z zagor $
  *
  * Zero-modulus bruteforce puzzle to prevent 
  * Denial of Service and password bruteforce attacks

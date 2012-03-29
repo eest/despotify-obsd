@@ -1,5 +1,5 @@
 #
-# $Id$
+# $Id: local.mk 489 2010-01-20 16:09:33Z fxbhh $
 # 
 
 LIB_OBJS = aes.lo auth.lo buf.lo cache.lo channel.lo commands.lo dns.lo ezxml.lo handlers.lo keyexchange.lo packet.lo puzzle.lo session.lo shn.lo sndqueue.lo util.lo network.lo despotify.lo sha1.lo hmac.lo xml.lo 
@@ -25,11 +25,6 @@ endif
 # Linux specifics
 ifeq ($(shell uname -s),Linux)
     LDFLAGS += -lresolv -lpthread
-endif
-
-# OpenBSD specifics
-ifeq ($(shell uname -s),OpenBSD)
-    LDCONFIG = true
 endif
 
 libdespotify.la: $(LIB_OBJS)

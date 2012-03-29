@@ -1,5 +1,5 @@
 /*
- * $Id$
+ * $Id: network.c 399 2009-07-29 11:50:46Z noah-w $
  *
  * Cross platform networking for despotify
  *

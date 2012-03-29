@@ -1,4 +1,4 @@
-/* $Id$ */
+/* $Id: shn.h 182 2009-03-12 08:21:53Z zagor $ */
 /* Shannon: Shannon stream cipher and MAC header files */
 
 /*
