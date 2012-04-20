@@ -1,6 +1,6 @@
 $OpenBSD$
---- lib/local.mk.orig	Thu Mar 29 09:06:27 2012
-+++ lib/local.mk	Thu Mar 29 09:06:51 2012
+--- lib/local.mk.orig	Thu Apr 19 19:59:07 2012
++++ lib/local.mk	Thu Apr 19 19:59:53 2012
 @@ -4,7 +4,7 @@
  
  LIB_OBJS = aes.lo auth.lo buf.lo cache.lo channel.lo commands.lo dns.lo ezxml.lo handlers.lo keyexchange.lo packet.lo puzzle.lo session.lo shn.lo sndqueue.lo util.lo network.lo despotify.lo sha1.lo hmac.lo xml.lo 
@@ -10,7 +10,7 @@ $OpenBSD$
  LDCONFIG = ldconfig
  
  .PHONY: all clean install uninstall
-@@ -52,7 +52,7 @@ install: libdespotify.la
+@@ -52,11 +52,12 @@ install: libdespotify.la
  	install -d $(INSTALL_PREFIX)/lib/pkgconfig
  	 
  	$(LT) --mode=install install libdespotify.la $(INSTALL_PREFIX)/lib/libdespotify.la
@@ -19,3 +19,8 @@ $OpenBSD$
  	install -d $(INSTALL_PREFIX)/include/ 
  	install despotify.h $(INSTALL_PREFIX)/include/
  	install -d $(INSTALL_PREFIX)/lib/pkgconfig/
+ 	install despotify.pc $(INSTALL_PREFIX)/lib/pkgconfig/despotify.pc
++	@libtool --finish ${TRUEPREFIX}/lib
+ 
+ uninstall:
+ 	$(LT) --mode=uninstall rm -f $(INSTALL_PREFIX)/lib/libdespotify.la

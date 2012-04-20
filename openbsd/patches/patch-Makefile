@@ -1,6 +1,6 @@
 $OpenBSD$
---- Makefile.orig	Thu Mar 29 09:10:46 2012
-+++ Makefile	Thu Mar 29 09:14:19 2012
+--- Makefile.orig	Thu Apr 19 19:57:56 2012
++++ Makefile	Thu Apr 19 19:58:56 2012
 @@ -6,7 +6,7 @@
  export
  
@@ -10,7 +10,7 @@ $OpenBSD$
  
  LD = $(CC)
  
-@@ -36,6 +36,14 @@ ifeq ($(shell uname -s),Darwin)
+@@ -36,6 +36,15 @@ ifeq ($(shell uname -s),Darwin)
      LT = glibtool --tag=CC
  else
      LT = libtool $(SILENTLIB) --tag=CC
@@ -18,10 +18,11 @@ $OpenBSD$
 +
 +# OpenBSD specifics
 +ifeq ($(shell uname -s),OpenBSD)
-+    CFLAGS += -I${TRUEPREFIX}/include
++	CFLAGS += -I${TRUEPREFIX}/include
 +	LDFLAGS += -L${TRUEPREFIX}/lib -lmpg123 -lvorbisfile -logg \
-+			   -lvorbis -lcrypto -lm -lpthread  
-+	INSTALL_PREFIX = ${TRUEPREFIX}
++         			   -lvorbis -lcrypto -lm -lpthread
++	INSTALL_PREFIX = $(DESTDIR)${TRUEPREFIX}
++	LT = $(LIBTOOL)
  endif
  
  # windows specifics
