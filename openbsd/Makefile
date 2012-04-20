@@ -26,10 +26,13 @@ USE_GMAKE=	Yes
 USE_LIBTOOL=	Yes
 
 WANTLIB += c crypto pthread m ncursesw z 
+SHARED_LIBS +=	despotify                 0.0 # 0.0
 
 SUBST_VARS+=	CFLAGS
 
 MAKE_ENV+=	CXX=c++ CCFLAGS+="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
+MAKE_FLAGS += LIBdespotify_VERSION=0.0
 
 NO_CCACHE=	Yes
 
