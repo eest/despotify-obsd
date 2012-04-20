@@ -21,6 +21,13 @@ Source code
 ~~~~~~~~~~~
 $ git clone https://github.com/eest/despotify-obsd.git
 
+Build instructions for OpenBSD
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. cp -r despotify-obsd/openbsd /usr/ports/audio/despotify
+2. cd /usr/ports/audio/despotify
+3. sudo make install clean
+
 Build instructions for the clients and library
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Install necessary packages (as root)
