@@ -23,7 +23,7 @@ BUILD_DEPENDS=	devel/gmake \
 				devel/libtool \
 
 USE_GMAKE=	Yes
-USE_LIBTOOL=	Yes
+USE_LIBTOOL=	gnu
 
 WANTLIB += c crypto pthread m ncursesw z
 SHARED_LIBS +=	despotify                 0.0 # 0.0
