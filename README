@@ -1,46 +1,24 @@
 despotify-obsd?
 ~~~~~~~~~~~~~~~
-This is the despotify client (http://despotify.se) tweaked in order to build
-and run on OpenBSD. None of the currently involved people have any connections
-to the original despotify developers (thanks a lot for your time and effort
-creating despotify!).
+This is an OpenBSD port of the despotify client (http://despotify.se).
+None of the currently involved people have any connections to the original
+despotify developers (thanks a lot for your time and effort creating
+despotify!).
 
 Requirements?
 ~~~~~~~~~~~~~
 OS:
-    OpenBSD 5.0 (uses wprintf/vswprintf)
-Packages:
-    gmake
-    libao
-    libogg
-    libtool
-    libvorbis
-    mpg123
+    OpenBSD 5.0< (uses wprintf/vswprintf)
 
 Source code
 ~~~~~~~~~~~
 $ git clone https://github.com/eest/despotify-obsd.git
 
-Build instructions for OpenBSD
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Building the port (as root)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# cp -r despotify-obsd/openbsd /usr/ports/audio/despotify
+# cd /usr/ports/audio/despotify
+# make install clean
 
-1. cp -r despotify-obsd/openbsd /usr/ports/audio/despotify
-2. cd /usr/ports/audio/despotify
-3. sudo make install clean
-
-Build instructions for the clients and library
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1. Install necessary packages (as root)
-   # pkg_add gmake libao libogg libtool libvorbis mpg123
-
-2. Go to the directory src/ where the despotify library and client is located
-   $ cd src
-
-3. Run gmake
-   $ gmake
-
-4. Install (as root)
-   # gmake install
-
-5. You'll now have a 'despotify' and 'despotify-simple' client as well as a
+You'll now have a 'despotify' and 'despotify-simple' client as well as a
 gateway called 'despotify-gateway' installed under /usr/local/bin.
